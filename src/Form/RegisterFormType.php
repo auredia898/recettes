@@ -5,6 +5,10 @@ namespace App\Form;
 use App\Entity\Client;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -35,8 +39,18 @@ class RegisterFormType extends AbstractType
                 ]
             ])
 
-            ->add('language')
-            ->add('Country')
+            ->add('language', TextType::class, [
+                'label' =>'Langue parlée',
+                'attr'=> [
+                    'placeholder' => 'Votre langue'
+                ]
+            ])
+            ->add('Country', TextType::class, [
+                'label'=> 'Pays',
+                'attr'=> [
+                    'placeholder' => 'Pays de provenance'
+                ]
+            ])
 
             ->add('password', RepeatedType::class,[
                 'type' => PasswordType::class,
