@@ -14,54 +14,56 @@ class RegisterFormType extends AbstractType
     {
         $builder
             //EmailType for input type
-            ->add('email', EmailType::class, [
-                //llabel form 
-                'label' => 'Email',
+            ->add('firstname', TextType::class, [
+                'label' => 'Votre Prénom',
                 'attr' => [
-                    //placeholder form
-                    'placeholder' =>'Entrez votre email'
+                    'placeholder' =>'Saisissez votre Prénom'
                 ]
             ])
-            ->add('password', PasswordType::class, [
-                //llabel form 
-                'label' => 'Mot de passe',
-                'attr' => [
-                    //placeholder form
-                    'placeholder' =>'Entrez votre email'
-                ]
-            ])
-            ->add('firstname', TextType::class,[
-                //llabel form 
-                'label' => 'Firstname',
-                'attr' => [
-                    //placeholder form
-                    'placeholder' =>'Entrez votre nom'
-                ]
-            ])
+
             ->add('lastname', TextType::class,[
-                //llabel form 
-                'label' => 'Lastname',
+                'label' => 'Votre Nom',
                 'attr' => [
-                    //placeholder form
-                    'placeholder' =>'Entrez votre prénom'
+                    'placeholder' =>'Saisissez votre Nom'
                 ]
             ])
-            ->add('language', TextType::class,[
-                //llabel form 
-                'label' => 'Language',
+
+            ->add('email', EmailType::class,[
+                'label' => 'Votre Email',
                 'attr' => [
-                    //placeholder form
-                    'placeholder' =>'Quelle langue parlez-vous?'
+                    'placeholder' =>'Saisissez votre Email'
                 ]
             ])
-            ->add('Country', TextType::class,[
-                //llabel form 
-                'label' => 'Country',
-                'attr' => [
-                    //placeholder form
-                    'placeholder' =>'Entrez votre pays'
-                ]
+
+            ->add('language')
+            ->add('Country')
+
+            ->add('password', RepeatedType::class,[
+                'type' => PasswordType::class,
+                'invalid_message' => 'les mots de passe ne sont pas identiques',
+                'label' => 'Mot de Passe',
+                'required' => true,
+                # 'contraints' =>new Length(8, 30),
+                'first_options' => [
+                    'label' => 'Mot de Passe',
+                    'attr' => [
+                        'placeholder' =>'Choisissez un mot de passe'
+                    ]
+                ],
+
+                'second_options' =>[
+                    'label' => 'Cofirmez votre Mot de Passe',
+                    'attr' => [
+                        'placeholder' =>'Confirmez votre mot de passe'
+                    ]
+                ],
+
             ])
+
+            ->add('submit', SubmitType::class,[
+                'label' => "S'inscrire",
+            ])
+
         ;
     }
 
