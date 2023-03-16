@@ -22,12 +22,46 @@ class RegisterFormType extends AbstractType
                     'placeholder' =>'Entrez votre email'
                 ]
             ])
-            ->add('roles')
-            ->add('password')
-            ->add('firstname')
-            ->add('lastname')
-            ->add('language')
-            ->add('Country')
+            ->add('password', PasswordType::class, [
+                //llabel form 
+                'label' => 'Mot de passe',
+                'attr' => [
+                    //placeholder form
+                    'placeholder' =>'Entrez votre email'
+                ]
+            ])
+            ->add('firstname', TextType::class,[
+                //llabel form 
+                'label' => 'Firstname',
+                'attr' => [
+                    //placeholder form
+                    'placeholder' =>'Entrez votre nom'
+                ]
+            ])
+            ->add('lastname', TextType::class,[
+                //llabel form 
+                'label' => 'Lastname',
+                'attr' => [
+                    //placeholder form
+                    'placeholder' =>'Entrez votre prénom'
+                ]
+            ])
+            ->add('language', TextType::class,[
+                //llabel form 
+                'label' => 'Language',
+                'attr' => [
+                    //placeholder form
+                    'placeholder' =>'Quelle langue parlez-vous?'
+                ]
+            ])
+            ->add('Country', TextType::class,[
+                //llabel form 
+                'label' => 'Country',
+                'attr' => [
+                    //placeholder form
+                    'placeholder' =>'Entrez votre pays'
+                ]
+            ])
         ;
     }
 
