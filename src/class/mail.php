@@ -1,27 +1,46 @@
 <?php
-  require 'vendor/autoload.php';
-  use \Mailjet\Resources;
-  $mj = new \Mailjet\Client('****************************1234','****************************abcd',true,['version' => 'v3.1']);
-  $body = [
-    'Messages' => [
-      [
-        'From' => [
-          'Email' => "yessirinelove@gmail.com",
-          'Name' => "Yessirine"
-        ],
-        'To' => [
-          [
-            'Email' => "yessirinelove@gmail.com",
-            'Name' => "Yessirine"
-          ]
-        ],
-        'Subject' => "Greetings from Mailjet.",
-        'TextPart' => "My first Mailjet email",
-        'HTMLPart' => "<h3>Dear passenger 1, welcome to <a href='https://www.mailjet.com/'>Mailjet</a>!</h3><br />May the delivery force be with you!",
-        'CustomID' => "AppGettingStartedTest"
-      ]
-    ]
-  ];
-  $response = $mj->post(Resources::$Email, ['body' => $body]);
-  $response->success() && var_dump($response->getData());
-?>
+
+namespace App\Class;
+
+
+use Mailjet\Client;
+use Mailjet\Resources;
+
+class mail
+{
+    private string $api_key = '7714ee632d28a93be15f51517c1c7cdb';
+    private string $api_key_secret = '040728defbba4f34d111db089a6cb9';
+
+    public function send($to_mail, $to_name, $subject, $title, $subtitle, $content)
+    {
+        $mj = new Client($this->api_key, $this->api_key_secret,true,['version' => 'v3.1']);
+
+        $body = [
+            'Messages' => [
+                [
+                    'From' => [
+                        'Email' => "yessirinelove@gmail.com",
+                        'Name' => "Yessirine"
+                    ],
+                    'To' => [
+                        [
+                            'Email' => "$to_mail",
+                            'Name' => " $to_name"
+                        ]
+                    ],
+                    'TemplateID' => 4666681,
+                    'TemplateLanguage' => true,
+                    'Subject' => $subject,
+                    'Variables' =>[
+                        'title' => $title,
+                        'subtitle' => $subtitle,
+                        'content' =>$content,
+                    ]
+
+                ]
+            ]
+        ];
+        $response = $mj->post(Resources::$Email, ['body' => $body]);
+        $response->success() && dd($response->getData());
+    }
+}
