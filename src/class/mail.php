@@ -6,7 +6,7 @@ namespace App\Class;
 use Mailjet\Client;
 use Mailjet\Resources;
 
-class mail
+class Mail
 {
     private string $api_key = '7714ee632d28a93be15f51517c1c7cdb';
     private string $api_key_secret = '040728defbba4f34d111db089a6cb9';
