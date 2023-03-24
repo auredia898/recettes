@@ -24,7 +24,7 @@ class ResetPasswdController extends AbstractController
     #[Route("/forgot_password", name: 'reset_password')]
     public function index(Request $request)
     {
-        if($this->getUser())
+        if($this->getClient())
         {
             return $this->redirectToRoute('home');
         }
@@ -35,7 +35,7 @@ class ResetPasswdController extends AbstractController
 
             if ($client) {
                 $reset_password = new ResetPassword();
-                $reset_password ->setUser($client);
+                $reset_password ->setClient($client);
                 $reset_password->setToken(uniqid());
                 $reset_password->setCreatedAt(new \DateTime());
                 $this->entityManager->persist($reset_password);
