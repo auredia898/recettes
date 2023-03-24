@@ -46,7 +46,7 @@ class ResetPasswdController extends AbstractController
                 ]);
                 $content= "Bonjour".$client->getFirstname()."<br/>Vous avez demandé a réinitialiser votre mot de passe sur la Boutique Store.<br/><br/>";
                 $content ="Merci de bien vouloir <a href".$url.">cliquer ici</a> pour mettre à jour votre mot de passe";
-                $mail = new mail();
+                $mail = new Mail();
                 $mail->send($client->getEmail(), $client->getFirstname().' '.$client->getLastname(), 'Réinitialiser votre mot de passe sur Store', $content);
                 $this->addFlash('notice', 'Veuillez consulter votre email.');
             }
@@ -54,11 +54,11 @@ class ResetPasswdController extends AbstractController
                 $this->addFlash('notice', 'Adresse email inconnue');
             }
         }
-        return $this->render('reset_password/index.html.twig');
+        return $this->render('reset_passwd/index.html.twig');
     }
 
     #[Route("/change_password/{token}", name: 'update_password')]
-    public function update(Request $request, $token, UserPasswordEncoder $encoder)
+    public function update(Request $request, $token, UserPasswordHasherInterface $hasher)
     {
         $reset_password = $this->entityManager->getRepository(ResetPassword::class)->findOneByToken($token);
 
@@ -84,7 +84,7 @@ class ResetPasswdController extends AbstractController
             return $this->redirectToRoute('app_login');
         }
 
-        return $this->render('reset_password/update.html.twig',[
+        return $this->render('reset_passwd/update.html.twig',[
             'form'=> $form->createView()
         ]);
     }
