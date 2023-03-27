@@ -14,21 +14,67 @@ class Guides
     private ?int $id = null;
 
     #[ORM\Column]
-    private ?int $Experiences = null;
+    private ?int $anneeExp = null;
+
+    #[ORM\Column]
+    private ?int $anneeResidence = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $cv = null;
+
+    #[ORM\ManyToOne(inversedBy: 'guides')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?CategorieGuide $idCatGuide = null;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getExperiences(): ?int
+    public function getAnneeExp(): ?int
     {
-        return $this->Experiences;
+        return $this->anneeExp;
     }
 
-    public function setExperiences(int $Experiences): self
+    public function setAnneeExp(int $anneeExp): self
     {
-        $this->Experiences = $Experiences;
+        $this->anneeExp = $anneeExp;
+
+        return $this;
+    }
+
+    public function getAnneeResidence(): ?int
+    {
+        return $this->anneeResidence;
+    }
+
+    public function setAnneeResidence(int $anneeResidence): self
+    {
+        $this->anneeResidence = $anneeResidence;
+
+        return $this;
+    }
+
+    public function getCv(): ?string
+    {
+        return $this->cv;
+    }
+
+    public function setCv(string $cv): self
+    {
+        $this->cv = $cv;
+
+        return $this;
+    }
+
+    public function getIdCatGuide(): ?CategorieGuide
+    {
+        return $this->idCatGuide;
+    }
+
+    public function setIdCatGuide(?CategorieGuide $idCatGuide): self
+    {
+        $this->idCatGuide = $idCatGuide;
 
         return $this;
     }
