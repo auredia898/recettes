@@ -44,7 +44,6 @@ class ResetPasswdController extends AbstractController
                 $this->entityManager->persist($reset_password);
                 $this->entityManager->flush();
 
-
                 $url = $this->generateUrl('update_password', [
                     'token' => $reset_password->getToken()
                 ]);
