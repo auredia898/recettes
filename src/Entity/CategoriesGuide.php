@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\CategorieGuideRepository;
+use App\Repository\CategoriesGuideRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: CategorieGuideRepository::class)]
-class CategorieGuide
+#[ORM\Entity(repositoryClass: CategoriesGuideRepository::class)]
+class CategoriesGuide
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -16,9 +16,9 @@ class CategorieGuide
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $libelle = null;
+    private ?string $name = null;
 
-    #[ORM\OneToMany(mappedBy: 'idCatGuide', targetEntity: Guides::class)]
+    #[ORM\OneToMany(mappedBy: 'category', targetEntity: Guide::class)]
     private Collection $guides;
 
     public function __construct()
@@ -31,42 +31,42 @@ class CategorieGuide
         return $this->id;
     }
 
-    public function getLibelle(): ?string
+    public function getName(): ?string
     {
-        return $this->libelle;
+        return $this->name;
     }
 
-    public function setLibelle(string $libelle): self
+    public function setName(string $name): self
     {
-        $this->libelle = $libelle;
+        $this->name = $name;
 
         return $this;
     }
 
     /**
-     * @return Collection<int, Guides>
+     * @return Collection<int, Guide>
      */
     public function getGuides(): Collection
     {
         return $this->guides;
     }
 
-    public function addGuide(Guides $guide): self
+    public function addGuide(Guide $guide): self
     {
         if (!$this->guides->contains($guide)) {
             $this->guides->add($guide);
-            $guide->setIdCatGuide($this);
+            $guide->setCategory($this);
         }
 
         return $this;
     }
 
-    public function removeGuide(Guides $guide): self
+    public function removeGuide(Guide $guide): self
     {
         if ($this->guides->removeElement($guide)) {
             // set the owning side to null (unless already changed)
-            if ($guide->getIdCatGuide() === $this) {
-                $guide->setIdCatGuide(null);
+            if ($guide->getCategory() === $this) {
+                $guide->setCategory(null);
             }
         }
 
