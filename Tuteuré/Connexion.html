@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KWABO Benin Connexion</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    .container {
+    padding: 20px;
+      width:500px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+      border:1px solid #ccc;
+      border-radius:10px;
+      background:white;
+  -webkit-box-shadow: 2px 1px 21px -9px rgba(0,0,0,0.38);
+  -moz-box-shadow: 2px 1px 21px -9px rgba(0,0,0,0.38);
+  box-shadow: 2px 1px 21px -9px rgba(0,0,0,0.38);
+  }
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f7f7f7;
+	font-family: Montserrat,Arial, Helvetica, sans-serif;
+}
+select {
+  width: 18%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f7f7f7;
+	font-family: Montserrat,Arial, Helvetica, sans-serif;
+}
+
+input[type=phone] {
+  width: 81%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f7f7f7;
+}
+
+input[type=text]:focus, input[type=password]:focus, input[type=phone]:focus, select:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+
+
+/* Set a style for all buttons */
+button {
+  background-color: #0eb7f4;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+	font-size:16px;
+	font-family: Montserrat,Arial, Helvetica, sans-serif;
+	border-radius:10px;
+}
+
+button:hover {
+  opacity:1;
+}
+
+
+/* Change styles for signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .signupbtn {
+     width: 100%;
+  }
+}
+body{
+    background-image: url(images/MINI\ BIBLIOTHEQUE\ DE\ LA\ FONDATION\ ZINSOU.jpg);
+}
+
+</style>
+<body>
+   <!--christ coding-->
+  <div class="container-fluid">
+      <div class="row" id="block1">
+          <nav>
+              <div class="logo">KWABO Benin</div>
+            
+              <div class="navbar">
+                <ul class="nav-menu">
+                  <li class="nav-item"><a href="Accueil.html" class="nav-link" id="o1">Accueil</a></li>
+                  <li class="nav-item"><a href="Apropos.html" class="nav-link" id="o2">A Propos</a></li>
+                  <li class="nav-item"><a href="Catalogue.html" class="nav-link" id="o3">Catalogue</a></li>
+                  <li class="nav-item"><a href="Contact.html" class="nav-link" id="o4">Contact</a></li>
+                  <li class="nav-item"><a href="Inscription.html" class="nav-link" id="o5">S'inscrire</a></li>
+                  <li class="nav-item"><a href="#" class="nav-link" id="o6">Se Connecter</a></li>
+                </ul>
+              </div>
+            
+              <div class="menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+              </div>
+            </nav>
+      </div>
+     <div class="row">
+      <form>
+        <div class="container">
+          <h1>Se Connecter</h1>
+          <p>Veuillez remplir tous les champs.</p>
+      
+          <label for="email"><b>Email</b></label>
+          <input type="text" placeholder="Entrer votre email" name="email" required>
+          
+          <label for="psw"><b>Mot de passe</b></label>
+          <input type="password" placeholder="Entrer votre mot de passe" name="psw" required>
+    
+          <p>Mot de passe oublié ? <a href="Inscription.html" style="color:dodgerblue">S'inscrire</a>.</p>
+      
+          <div class="clearfix">
+            <button type="submit" class="btn">Connexion</button>
+          </div>
+        </div>
+      </form>
+     </div>
+     <!--christ coding-->
+  </div>
+  <script src="animation.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+</body>
+</html>
