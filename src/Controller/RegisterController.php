@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\class\Mail;
+use App\class\mail;
 use App\Entity\Client;
 use App\Form\RegisterFormType;
 use Doctrine\ORM\EntityManagerInterface;
@@ -42,7 +42,7 @@ class RegisterController extends AbstractController
                 $this->entityManager->persist($client);
                 $this->entityManager->flush();
                 //send a welcome message by email to the user when their account is created
-                $mail = new Mail();
+                $mail = new mail();
                 $title = "Message de bienvenu";
                 $subtitle = "Profitez de nos sites touristiques et culturels.";
                 $content="Bonjour".$client->getFirstName()."<br/>Bienvenu sur notre site de tourisme.";
