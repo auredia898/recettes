@@ -18,14 +18,6 @@ class CategorieGuide
     #[ORM\Column(length: 255)]
     private ?string $libelle = null;
 
-    #[ORM\OneToMany(mappedBy: 'idCatGuide', targetEntity: Guides::class)]
-    private Collection $guides;
-
-    public function __construct()
-    {
-        $this->guides = new ArrayCollection();
-    }
-
     public function getId(): ?int
     {
         return $this->id;
@@ -43,33 +35,4 @@ class CategorieGuide
         return $this;
     }
 
-    /**
-     * @return Collection<int, Guides>
-     */
-    public function getGuides(): Collection
-    {
-        return $this->guides;
-    }
-
-    public function addGuide(Guides $guide): self
-    {
-        if (!$this->guides->contains($guide)) {
-            $this->guides->add($guide);
-            $guide->setIdCatGuide($this);
-        }
-
-        return $this;
-    }
-
-    public function removeGuide(Guides $guide): self
-    {
-        if ($this->guides->removeElement($guide)) {
-            // set the owning side to null (unless already changed)
-            if ($guide->getIdCatGuide() === $this) {
-                $guide->setIdCatGuide(null);
-            }
-        }
-
-        return $this;
-    }
 }
