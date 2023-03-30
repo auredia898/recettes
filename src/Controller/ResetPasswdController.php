@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\class\Mail;
+use App\class\mail;
 use App\Entity\Client;
 use App\Form\ResetPasswdType;
 use DateTime;
@@ -50,7 +50,7 @@ class ResetPasswdController extends AbstractController
                 $title= 'Mot de passe oublie';
                 $subtitle= "Bonjour".$client->getFirstname()."<br/>Vous avez demandé a réinitialiser votre mot de passe sur la Boutique Store.<br/><br/>";
                 $content ="Merci de bien vouloir <a href".$url.">cliquer ici</a> pour mettre à jour votre mot de passe";
-                $mail = new Mail();
+                $mail = new mail();
                 $mail->send($client->getEmail(), $client->getFirstname().' '.$client->getLastname(), 'Réinitialiser votre mot de passe sur Store', $title, $subtitle, $content);
                 $this->addFlash('notice', 'Veuillez consulter votre email.');
             }
