@@ -21,6 +21,32 @@ input{
 body{
     background-image: url(images/image-removebg-preview\ \(39\).jpg);
 }
+.button{
+  height:50px;
+}
+.button:hover{
+  background-color: black;
+  color: white;
+}
+
+#o1{
+  color: white;
+}
+#o2{
+  color: white;
+}
+#o3{
+  color: white;
+}
+#o4{
+  color: white;
+}
+#o5{
+  color: orange;
+}
+#o6{
+  color: white;
+}
 </style>
 <body>
   <div class="container-fluid">
@@ -35,7 +61,7 @@ body{
                   <li class="nav-item"><a href="Catalogue.html" class="nav-link" id="o3">Catalogue</a></li>
                   <li class="nav-item"><a href="Contact.html" class="nav-link" id="o4">Contact</a></li>
                   <li class="nav-item"><a href="#" class="nav-link" id="o5">S'inscrire</a></li>
-                  <li class="nav-item"><a href="Connexion.html" class="nav-link" id="o6">Se Connecter</a></li>
+                  <li class="nav-item"><a href="Connexion.html" class="nav-link" id="o6">Reservation</a></li>
                 </ul>
               </div>
             
@@ -78,8 +104,9 @@ body{
                                 	
                                     <div class="input_field select_option">
                                       <select>
-                                        <option>Select a country</option>
+                                        <option>Selectionner votre pays de provrenance</option>
                                         <option>France</option>
+                                        <option>Benin</option>
                                         <option>Senegal</option>
                                         <option>Maroc</option>
                                         <option>Tunisie</option>
@@ -100,7 +127,7 @@ body{
                                    </select>
                                    <input type="phone" name="phone" placeholder="91244567" required>
                                  
-                                <input class="button" type="submit" value="S'inscrire" />
+                                <input class="button" type="submit" value="S'inscrire" /> <br> <br> <br>
                               </form>
                             </div>
                           </div>
@@ -136,17 +163,28 @@ body{
           <!--Column1-->
           <div class="footer-pad">
             <h4>Description</h4>
-            <ul class="list-unstyled">
-              <li><a href="Accueil.html">Accueil</a></li>
-              <li><a href="Apropos.html">About</a></li>
-              <li><a href="Catalogue.html">Catalogue</a></li>
-              <li><a href="Contact.html">Contact</a></li>
-              <li><a href="#">S'inscrire</a></li>
-              <li><a href="Connexion.html">Se Connecter</a></li>
-              <li>
-                <a href="#"></a>
-              </li>
-            </ul>
+           <div class="row">
+            <div class="col-sm-6">
+              <ul class="list-unstyled">
+                <li><a href="Accueil.html">Accueil</a></li>
+                <li><a href="Apropos.html">About</a></li>
+                <li><a href="Catalogue.html">Catalogue</a></li>
+                <li>
+                  <a href="#"></a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-sm-6">
+              <ul class="list-unstyled">
+                <li><a href="Contact.html">Contact</a></li>
+                <li><a href="#">S'inscrire</a></li>
+                <li><a href="Connexion.html">Se Connecter</a></li>
+                <li>
+                  <a href="#"></a>
+                </li>
+              </ul>
+            </div>
+           </div>
           </div>
         </div>
           <div class="col-sm-3">

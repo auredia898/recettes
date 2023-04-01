@@ -1,0 +1,176 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AproposController!{% endblock %}
+
+{% block body %}
+
+        #information{
+
+}
+#bloc1{
+  background-image: url(images/touriste.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.infoss{
+  margin-top: 150px;
+}
+hr{
+  width: 100px;
+}
+h2{
+  color: blue;
+}
+#o1{
+  color: white;
+}
+#o2{
+  color: orange;
+}
+#o3{
+  color: white;
+}
+#o4{
+  color: white;
+}
+#o5{
+  color: white;
+}
+#o6{
+  color: white;
+}
+#info12{
+  background-color: orangered;
+}
+.carac{
+  text-align: center;
+  padding: 50px;
+  color: white;
+}
+#bor{
+  border-right: 2px dashed white;
+}
+</style>
+<body>
+    <div class="container-fluid">
+        <div class="row" id="block1">
+            <nav>
+                <div class="logo">KWABO Benin</div>
+              
+                <div class="navbar">
+                  <ul class="nav-menu">
+                    <li class="nav-item"><a href="Accueil.html" class="nav-link" id="o1">Accueil</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" id="o2">A Propos</a></li>
+                    <li class="nav-item"><a href="Catalogue.html" class="nav-link" id="o3">Catalogue</a></li>
+                    <li class="nav-item"><a href="Contact.html" class="nav-link" id="o4">Contact</a></li>
+                    <li class="nav-item"><a href="Inscription.html" class="nav-link" id="o5">S'inscrire</a></li>
+                    <li class="nav-item"><a href="Connexion.html" class="nav-link" id="o6">Reservation</a></li>
+                  </ul>
+                </div>
+              
+                <div class="menu">
+                  <span class="bar"></span>
+                  <span class="bar"></span>
+                  <span class="bar"></span>
+                </div>
+              </nav>
+              
+        </div>
+        <div class="row" id="information">
+          <div class="col-sm-4">
+           <div class="infoss">
+            <h2>Qui sommes nous ?</h2>
+            <center><hr></center>
+            <p>
+              Nous facilitons votre sejour au Benin en le rendant plus agréable grâce à la culture et aux traditions qui font la diversité du pays. Nous choisir revient à passer un excellent sejour voir inoubliable en république du Benin.
+            </p>
+            <div class="down"></div>
+           </div>
+          </div>
+          <div class="col-sm-8" id="bloc1">
+          
+          </div>
+        </div>
+        <div class="row" id="info12">
+          <div class="col-sm-3" id="bor">
+            <h2 class="carac">Efficace</h2>
+          </div>
+          <div class="col-sm-3" id="bor">
+            <h2 class="carac">Professionnelle</h2>
+          </div>
+          <div class="col-sm-3" id="bor">
+            <h2 class="carac">Fiable</h2>
+          </div>
+          <div class="col-sm-3">
+            <h2 class="carac">Accessible</h2>
+          </div>
+        </div>
+        <div class="row" id="block5">      
+          <footer class="mainfooter" role="contentinfo">
+      <div class="footer-middle">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <!--Column1-->
+            <div class="footer-pad">
+              <center>
+                  <h4>KWABO Benin</h4>
+              <p class="kwabo">
+                  Une agence dont la vison est de faciliter aux touristes <br>
+                  la visite des sites touristiques, monuments, places publiques <br>
+                  et autres rites culturelles du Benin.
+              </p>
+              </center>
+            </div>
+          </div>
+         
+          <div class="col-sm-3">
+            <!--Column1-->
+            <div class="footer-pad">
+              <h4>Description</h4>
+             <div class="row">
+              <div class="col-sm-6">
+                <ul class="list-unstyled">
+                  <li><a href="Accueil.html">Accueil</a></li>
+                  <li><a href="#">A Propos</a></li>
+                  <li><a href="Catalogue.html">Catalogue</a></li>
+                  <li>
+                    <a href="#"></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-sm-6">
+                <ul class="list-unstyled">
+                  <li><a href="Contact.html">Contact</a></li>
+                  <li><a href="Inscription.html">S'inscrire</a></li>
+                  <li><a href="Connexion.html">Se Connecter</a></li>
+                  <li>
+                    <a href="#"></a>
+                  </li>
+                </ul>
+              </div>
+             </div>
+            </div>
+          </div>
+            <div class="col-sm-3">
+                <h4>Nous suivre</h4>
+                <ul class="social-network social-circle">
+                 <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                 <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                </ul>				
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 copy">
+                <p class="text-center">&copy; Copyright 2023 - KWABO BENIN.  All rights reserved.</p>
+            </div>
+        </div>
+    
+    
+      </div>
+      </div>
+    </footer>
+      
+        </div>
+    </div>
+{% endblock %}
